@@ -5,7 +5,7 @@
 ==================
 
 
-In Demo session we have Overview of the all CI/CD tools & AWS Road Map
+In the Demo session we have Overview of the all CI/CD tools & AWS Road Map
 
 
 <img width="1909" height="725" alt="image" src="https://github.com/user-attachments/assets/61ba06cc-e465-488c-8611-05da91992c12" />
