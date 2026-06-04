@@ -738,3 +738,645 @@ To github.com:srinfotechbatch8/java-hello-world-with-maven.git
 HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/java-hello-world-with-maven (feature/2026.06.12)
 $
 
+
+29/05/2026::
+==============
+
+
+<img width="1778" height="766" alt="image" src="https://github.com/user-attachments/assets/4fb89bca-3a4a-4edf-b9b4-1285e20fb410" />
+
+
+A GitHub branching strategy is crucial for maintaining an organized workflow in version control. There are different strategies depending on the size of the project, the number of team members, and the desired workflow. Here are some common branching strategies used in GitHub:
+
+main or master branch:: 
+
+This is default branch and whenever we created the empty Repository by defauly main or master branche is created automatically.
+main or master branch always stable and live code 
+
+feature branch:: 
+
+It could be a new feature, an improvement of existing features, bug fixes, or any other changes. A feature branch is a type of branch in Git typically used to develop new features for the software.feature branch will created from main or master OR feature branch created from latest release branch always based on the release cycle
+
+formate:: feature/YYYY.MM.DD
+ feature/2025.08.05
+
+release branch:: 
+
+Based on the release we have created release branch accourdingly and starts the next release cycle.
+always release branch created from master only and master have stable and live code and post release we shold merged code changes to master branch only
+
+release/2025.08.10
+
+bugfix branch::
+
+A bugfix branch is a Git branch created to fix defects or issues in the code without affecting ongoing development.
+
+formate:: bugfix/YYYY.MM.DD
+ bugfix/2025.08.05
+
+ hotfix branch::
+
+ A hotfix branch is a temporary branch created to fix a critical issue in production environments.
+ a hotfix starts from the production branch (main or master) so the fix can be released quickly.
+
+ formate:: hotfix/YYYY.MM.DD
+ hotfix/2025.08.05
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f490413f-aee3-4358-ac74-e080159ba12f" />
+
+
+Lab Practice::
+===============
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest
+$ git clone git@github.com:srinfotechbatch8/HDFC-Bank.git
+Cloning into 'HDFC-Bank'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest
+$ cd HDFC-Bank
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (main)
+$ git checkout feature/2026.08.16
+error: pathspec 'feature/2026.08.16' did not match any file(s) known to git
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (main)
+$ git pull
+From github.com:srinfotechbatch8/HDFC-Bank
+ * [new branch]      feature/2026.08.16 -> origin/feature/2026.08.16
+Already up to date.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (main)
+$ git checkout feature/2026.08.16
+M       README.md
+branch 'feature/2026.08.16' set up to track 'origin/feature/2026.08.16'.
+Switched to a new branch 'feature/2026.08.16'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (feature/2026.08.16)
+$ git status
+On branch feature/2026.08.16
+Your branch is up to date with 'origin/feature/2026.08.16'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .editorconfig
+        .gitattributes
+        .gitignore
+        .npmrc
+        .travis.yml
+        .yo-rc.json
+        index.js
+        license
+        package.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (feature/2026.08.16)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (feature/2026.08.16)
+$ git status
+On branch feature/2026.08.16
+Your branch is up to date with 'origin/feature/2026.08.16'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .editorconfig
+        new file:   .gitattributes
+        new file:   .gitignore
+        new file:   .npmrc
+        new file:   .travis.yml
+        new file:   .yo-rc.json
+        modified:   README.md
+        new file:   index.js
+        new file:   license
+        new file:   package.json
+
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (feature/2026.08.16)
+$ git commit -m "this is my first commit for HDFC bank app implementatuions"
+[feature/2026.08.16 cdbb161] this is my first commit for HDFC bank app implementatuions
+ 10 files changed, 348 insertions(+), 1 deletion(-)
+ create mode 100644 .editorconfig
+ create mode 100644 .gitattributes
+ create mode 100644 .gitignore
+ create mode 100644 .npmrc
+ create mode 100644 .travis.yml
+ create mode 100644 .yo-rc.json
+ create mode 100644 index.js
+ create mode 100644 license
+ create mode 100644 package.json
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (feature/2026.08.16)
+$ git push
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (12/12), 4.27 KiB | 875.00 KiB/s, done.
+Total 12 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:srinfotechbatch8/HDFC-Bank.git
+   c8210a5..cdbb161  feature/2026.08.16 -> feature/2026.08.16
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (feature/2026.08.16)
+$ git checkout bugfix/2026.08.16
+error: pathspec 'bugfix/2026.08.16' did not match any file(s) known to git
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (feature/2026.08.16)
+$ git pull
+remote: Enumerating objects: 2, done.
+remote: Counting objects: 100% (2/2), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (2/2), 1.76 KiB | 78.00 KiB/s, done.
+From github.com:srinfotechbatch8/HDFC-Bank
+ * [new branch]      bugfix/2026.08.16  -> origin/bugfix/2026.08.16
+   c8210a5..b763181  main               -> origin/main
+ * [new branch]      release/2026.08.16 -> origin/release/2026.08.16
+Already up to date.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (feature/2026.08.16)
+$ git checkout bugfix/2026.08.16
+branch 'bugfix/2026.08.16' set up to track 'origin/bugfix/2026.08.16'.
+Switched to a new branch 'bugfix/2026.08.16'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (bugfix/2026.08.16)
+$ git status
+On branch bugfix/2026.08.16
+Your branch is up to date with 'origin/bugfix/2026.08.16'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (bugfix/2026.08.16)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (bugfix/2026.08.16)
+$ git commit -m "fixed the bug"
+[bugfix/2026.08.16 dcbb098] fixed the bug
+ 1 file changed, 6 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (bugfix/2026.08.16)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 320 bytes | 160.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:srinfotechbatch8/HDFC-Bank.git
+   0604e1c..dcbb098  bugfix/2026.08.16 -> bugfix/2026.08.16
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (bugfix/2026.08.16)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 896 bytes | 89.00 KiB/s, done.
+From github.com:srinfotechbatch8/HDFC-Bank
+ * [new branch]      hotfix/2026.08.16  -> origin/hotfix/2026.08.16
+   0604e1c..540cfd7  release/2026.08.16 -> origin/release/2026.08.16
+Already up to date.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (bugfix/2026.08.16)
+$ git checkout hotfix/2026.08.16
+branch 'hotfix/2026.08.16' set up to track 'origin/hotfix/2026.08.16'.
+Switched to a new branch 'hotfix/2026.08.16'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (hotfix/2026.08.16)
+$ git status
+On branch hotfix/2026.08.16
+Your branch is up to date with 'origin/hotfix/2026.08.16'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   package.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (hotfix/2026.08.16)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (hotfix/2026.08.16)
+$ git commit -m "fixed the production issues"
+[hotfix/2026.08.16 3d75765] fixed the production issues
+ 1 file changed, 7 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (hotfix/2026.08.16)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:srinfotechbatch8/HDFC-Bank.git
+   b763181..3d75765  hotfix/2026.08.16 -> hotfix/2026.08.16
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/HDFC-Bank (hotfix/2026.08.16)
+$
+
+
+https://github.com/srinfotechbatch8/HDFC-Bank.git
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f7f6065c-4b75-4c72-a2b6-90f7bad7a631" />
+
+
+01/06/2026::
+============
+
+Avoide conflicts in RealTime Scenarious::
+==========================================
+
+If multiple developers OR DevOps Engineers are working on same Project/MOdules, if they tried to commits thier code changes to Repository, it will faces the conflicts issues and how to resolved those conflicts issues in real time projects
+
+<img width="1825" height="714" alt="image" src="https://github.com/user-attachments/assets/1bef0e01-aca8-4b00-ada0-1a87065fcce9" />
+
+git pull::
+git pull command is use, copies changes from a remote repository directly into your working directory (local directory) and merged code changes from remote repository to local repository
+
+git fetch::
+The git fetch command only fetch the changes into your local Git repo and it will not merged anything. just fetch the details
+
+Please create developer1,developer2,developer3 directories in your local machine and clone the project code separately
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/42cedd0f-8dcc-4321-bbb9-d1ccad29077f" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5bf38345-afe7-4181-b8ad-758d3fe7b3ad" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/08decd96-196a-4e2d-85fb-b5360d27184d" />
+
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (feature/2025.10.10) $ git push To github.com:srinfotechbatch4/DevTeamAviodConflicts.git ! [rejected] feature/2025.10.10 -> feature/2025.10.10 (fetch first) error: failed to push some refs to 'github.com:srinfotechbatch4/DevTeamAviodConflicts.git' hint: Updates were rejected because the remote contains work that you do not hint: have locally. This is usually caused by another repository pushing to hint: the same ref. If you want to integrate the remote changes, use hint: 'git pull' before pushing again. hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+resolved conflicts::
+====================
+
+git pull
+
+opend the editor
+
+1.presh the i from your keyboard
+
+2.esc
+
+3.swift+:
+
+4.wq
+
+5.enter
+
+
+Developer1 Activity::
+=================
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1
+$ git clone git@github.com:srinfotechbatch8/java-hello-world-with-maven.git
+Cloning into 'java-hello-world-with-maven'...
+remote: Enumerating objects: 94, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 94 (delta 0), reused 7 (delta 0), pack-reused 83 (from 1)
+Receiving objects: 100% (94/94), 18.17 KiB | 477.00 KiB/s, done.
+Resolving deltas: 100% (29/29), done.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1
+$ cd java-hello-world-with-maven/
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (master)
+$ git checkout feature/2026.06.01
+error: pathspec 'feature/2026.06.01' did not match any file(s) known to git
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (master)
+$ git pull
+From github.com:srinfotechbatch8/java-hello-world-with-maven
+ * [new branch]      feature/2026.06.01 -> origin/feature/2026.06.01
+Already up to date.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (master)
+$ git checkout feature/2026.06.01
+branch 'feature/2026.06.01' set up to track 'origin/feature/2026.06.01'.
+Switched to a new branch 'feature/2026.06.01'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git status
+On branch feature/2026.06.01
+Your branch is up to date with 'origin/feature/2026.06.01'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/main/java/hello/HelloWorld.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git status
+On branch feature/2026.06.01
+Your branch is up to date with 'origin/feature/2026.06.01'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   src/main/java/hello/HelloWorld.java
+
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git commit -m "added develoepr class for june release"
+[feature/2026.06.01 8e92c1c] added develoepr class for june release
+ 1 file changed, 11 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 541 bytes | 270.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:srinfotechbatch8/java-hello-world-with-maven.git
+   43d4534..8e92c1c  feature/2026.06.01 -> feature/2026.06.01
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git status
+On branch feature/2026.06.01
+Your branch is up to date with 'origin/feature/2026.06.01'.
+
+Merge branch 'feature/2026.06.01' of github.com:srinfotechbatch8/java-hello-world-with-maven into feature/2026.06.01
+
+remote: Enumerating objects: 27, done.
+remote: Counting objects: 100% (27/27), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 15 (delta 4), reused 15 (delta 4), pack-reused 0 (from 0)
+Unpacking objects: 100% (15/15), 1.14 KiB | 8.00 KiB/s, done.
+From github.com:srinfotechbatch8/java-hello-world-with-maven
+   8e92c1c..f434c41  feature/2026.06.01 -> origin/feature/2026.06.01
+Merge made by the 'ort' strategy.
+ src/main/java/hello/HelloWorld.java | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git status
+On branch feature/2026.06.01
+Your branch is ahead of 'origin/feature/2026.06.01' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 608 bytes | 608.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To github.com:srinfotechbatch8/java-hello-world-with-maven.git
+   f434c41..2a51171  feature/2026.06.01 -> feature/2026.06.01
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git fetch
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 7 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (7/7), 1.12 KiB | 14.00 KiB/s, done.
+From github.com:srinfotechbatch8/java-hello-world-with-maven
+   2a51171..ea2c5f0  feature/2026.06.01 -> origin/feature/2026.06.01
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper1/java-hello-world-with-maven (feature/2026.06.01)
+$ git pull
+Updating 2a51171..ea2c5f0
+Fast-forward
+ src/main/java/hello/HelloWorld.java | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+
+Developer2 Activity::
+======================
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2
+$ git clone git@github.com:srinfotechbatch8/java-hello-world-with-maven.git
+Cloning into 'java-hello-world-with-maven'...
+remote: Enumerating objects: 94, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 94 (delta 0), reused 7 (delta 0), pack-reused 83 (from 1)
+Receiving objects: 100% (94/94), 18.17 KiB | 1.07 MiB/s, done.
+Resolving deltas: 100% (29/29), done.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2
+$ cd java-hello-world-with-maven/
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (master)
+$ git checkout feature/2026.06.01
+branch 'feature/2026.06.01' set up to track 'origin/feature/2026.06.01'.
+Switched to a new branch 'feature/2026.06.01'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01)
+$ git status
+On branch feature/2026.06.01
+Your branch is up to date with 'origin/feature/2026.06.01'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/main/java/hello/HelloWorld.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01)
+$ git commit -m "added developer2 changes for june release"
+[feature/2026.06.01 434268a] added developer2 changes for june release
+ 1 file changed, 11 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01)
+$ git push
+To github.com:srinfotechbatch8/java-hello-world-with-maven.git
+ ! [rejected]        feature/2026.06.01 -> feature/2026.06.01 (fetch first)
+error: failed to push some refs to 'github.com:srinfotechbatch8/java-hello-world-with-maven.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01)
+$ git pull
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 7 (delta 2), reused 7 (delta 2), pack-reused 0 (from 0)
+Unpacking objects: 100% (7/7), 521 bytes | 7.00 KiB/s, done.
+From github.com:srinfotechbatch8/java-hello-world-with-maven
+   43d4534..8e92c1c  feature/2026.06.01 -> origin/feature/2026.06.01
+Auto-merging src/main/java/hello/HelloWorld.java
+CONFLICT (content): Merge conflict in src/main/java/hello/HelloWorld.java
+Automatic merge failed; fix conflicts and then commit the result.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01|MERGING)
+$ git status
+On branch feature/2026.06.01
+Your branch and 'origin/feature/2026.06.01' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   src/main/java/hello/HelloWorld.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01|MERGING)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01|MERGING)
+$ git commit -m "resolved the conflicts issues"
+[feature/2026.06.01 57d44c4] resolved the conflicts issues
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01)
+$ git push
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (8/8), 707 bytes | 353.00 KiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:srinfotechbatch8/java-hello-world-with-maven.git
+   8e92c1c..57d44c4  feature/2026.06.01 -> feature/2026.06.01
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper2/java-hello-world-with-maven (feature/2026.06.01)
+$
+
+Developer3 Activity::
+===========================
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper3
+$ git clone git@github.com:srinfotechbatch8/java-hello-world-with-maven.git
+Cloning into 'java-hello-world-with-maven'...
+remote: Enumerating objects: 94, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 94 (delta 0), reused 7 (delta 0), pack-reused 83 (from 1)
+Receiving objects: 100% (94/94), 18.17 KiB | 1.07 MiB/s, done.
+Resolving deltas: 100% (29/29), done.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper3
+$ cd java-hello-world-with-maven/
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper3/java-hello-world-with-maven (master)
+$ git checkout feature/2026.06.01
+branch 'feature/2026.06.01' set up to track 'origin/feature/2026.06.01'.
+Switched to a new branch 'feature/2026.06.01'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper3/java-hello-world-with-maven (feature/2026.06.01)
+$ git pull
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 15 (delta 5), reused 14 (delta 4), pack-reused 0 (from 0)
+Unpacking objects: 100% (15/15), 1.08 KiB | 6.00 KiB/s, done.
+From github.com:srinfotechbatch8/java-hello-world-with-maven
+   43d4534..57d44c4  feature/2026.06.01 -> origin/feature/2026.06.01
+Updating 43d4534..57d44c4
+Fast-forward
+ src/main/java/hello/HelloWorld.java | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper3/java-hello-world-with-maven (feature/2026.06.01)
+$ git status
+On branch feature/2026.06.01
+Your branch is up to date with 'origin/feature/2026.06.01'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/main/java/hello/HelloWorld.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper3/java-hello-world-with-maven (feature/2026.06.01)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper3/java-hello-world-with-maven (feature/2026.06.01)
+$ git commit -m "added dev3 changes for june release"
+[feature/2026.06.01 f434c41] added dev3 changes for june release
+ 1 file changed, 11 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper3/java-hello-world-with-maven (feature/2026.06.01)
+$ git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 517 bytes | 258.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:srinfotechbatch8/java-hello-world-with-maven.git
+   57d44c4..f434c41  feature/2026.06.01 -> feature/2026.06.01
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch8Latest/devloper3/java-hello-world-with-maven (feature/2026.06.01)
+$
+
+
+Please be practice above 3 developers activity in real time bases
+
+>git fetch--->just fetch
+
+>git pull -->fetch+merged
+
+Session Note::
+==================
+
+git pull ---->pull the changes from remote to local machine
+
+if you faces any conflicts issues during the code changes push from local to remote,
+
+we need to follow the below steps to resove the conflicts
+
+1.press the i from your keyboard
+
+2.press the esc from your keyboard
+
+3.swift+: from your keyboard
+
+4.wq
+
+5.press enter
+
+to avoide the conflicts please make sure should perform >git pull
+
+1.git push ---->local to remote
+
+2.git pull -->fetch the details + merged the changes
+
+3.git fetch --->just the details
